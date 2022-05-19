@@ -9,6 +9,9 @@
     },
     "dev": {
       "cache": false
+    },
+    "type-check": {
+      "outputs": ["tsconfig.tsbuildinfo"]
     }
   }
 }

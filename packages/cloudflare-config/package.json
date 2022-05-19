@@ -5,10 +5,11 @@
   "types": "index.ts",
   "scripts": {
     "lint": "eslint .",
-    "typecheck": "tsc -b"
+    "type-check": "tsc -b"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^3.10.0",
+    "tsconfig": "*",
     "typescript": "^4.6.4"
   }
 }

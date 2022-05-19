@@ -10,7 +10,7 @@
     "build": "remix build",
     "dev": "remix watch",
     "lint": "eslint .",
-    "typecheck": "tsc -b"
+    "type-check": "tsc -b"
   },
   "dependencies": {
     "@remix-run/cloudflare": "^1.5.1",
@@ -27,6 +27,7 @@
     "cloudflare-env": "*",
     "eslint": "^8.15.0",
     "eslint-config-custom": "*",
+    "tsconfig": "*",
     "typescript": "^4.6.4"
   }
 }

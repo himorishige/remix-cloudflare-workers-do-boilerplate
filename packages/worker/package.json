@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "wrangler dev --env dev --local",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "type-check": "tsc -b"
   },
   "dependencies": {
     "@cloudflare/kv-asset-handler": "^0.2.0",
@@ -16,6 +17,7 @@
     "cloudflare-env": "*",
     "eslint": "^8.15.0",
     "eslint-config-custom": "*",
+    "tsconfig": "*",
     "typescript": "^4.6.4",
     "wrangler": "^2.0.5"
   }
