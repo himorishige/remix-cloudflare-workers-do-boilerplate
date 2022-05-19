@@ -1,0 +1,10 @@
+account_id = ""
+compatibility_date = "2022-05-14"
+name = "on-the-fridge"
+
+main = "src/index.ts"
+
+workers_dev = true
+
+[site]
+bucket = "../../apps/remix-app/public"
