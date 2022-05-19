@@ -13,9 +13,6 @@
     "type-check": "tsc -b"
   },
   "dependencies": {
-    "@mantine/core": "^4.2.5",
-    "@mantine/hooks": "^4.2.5",
-    "@mantine/ssr": "^4.2.5",
     "@remix-run/cloudflare": "^1.5.1",
     "@remix-run/cloudflare-workers": "^1.5.1",
     "@remix-run/react": "^1.5.1",
