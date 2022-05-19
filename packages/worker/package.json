@@ -10,7 +10,8 @@
   "dependencies": {
     "@cloudflare/kv-asset-handler": "^0.2.0",
     "@remix-run/cloudflare": "^1.5.1",
-    "remix-app": "*"
+    "remix-app": "*",
+    "counter-do": "*"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^3.10.0",
