@@ -36,7 +36,7 @@ export let loader: LoaderFunction = async ({ context: { env } }) => {
   return json<LoaderData>({ loaderCalls });
 };
 
-function Document({ children }: PropsWithChildren<{}>) {
+const Document = ({ children }: PropsWithChildren<{}>) => {
   let matches = useMatches();
   let root = matches.find((match) => match.id === 'root');
   let data = root?.data as LoaderData | undefined;
@@ -50,12 +50,8 @@ function Document({ children }: PropsWithChildren<{}>) {
       <body>
         <header>
           <h1 className="text-3xl font-bold underline">
-            <Link to="/">Remix Chat</Link>
+            <Link to="/">Remix App</Link>
           </h1>
-          <p>
-            This chat runs entirely on the edge, powered by Cloudflare Workers
-            Durable Objects
-          </p>
         </header>
         {children}
         {data && (
@@ -70,7 +66,7 @@ function Document({ children }: PropsWithChildren<{}>) {
       </body>
     </html>
   );
-}
+};
 
 export default function App() {
   return (
