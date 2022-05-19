@@ -7,8 +7,10 @@
   "main": "./build/index.js",
   "types": "./build.d.ts",
   "scripts": {
-    "build": "remix build",
-    "dev": "remix watch",
+    "build": "npm run build:css && remix build",
+    "dev:css": "tailwindcss -w -i ./styles/app.css -o app/styles/app.css",
+    "dev:remix": "remix watch",
+    "dev": "concurrently \"npm run dev:css\" \"remix watch\"",
     "lint": "eslint .",
     "type-check": "tsc -b"
   },
@@ -24,9 +26,13 @@
     "@remix-run/dev": "^1.5.1",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.4",
+    "autoprefixer": "^10.4.7",
     "cloudflare-env": "*",
+    "concurrently": "^7.2.0",
     "eslint": "^8.15.0",
     "eslint-config-custom": "*",
+    "postcss": "^8.4.14",
+    "tailwindcss": "^3.0.24",
     "tsconfig": "*",
     "typescript": "^4.6.4"
   }

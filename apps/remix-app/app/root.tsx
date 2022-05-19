@@ -12,6 +12,7 @@ import {
   useMatches,
 } from '@remix-run/react';
 import type { PropsWithChildren } from 'react';
+import styles from './styles/app.css';
 
 export const meta: MetaFunction = () => ({
   charset: 'utf-8',
@@ -22,6 +23,10 @@ export const meta: MetaFunction = () => ({
 type LoaderData = {
   loaderCalls: number;
 };
+
+export function links() {
+  return [{ rel: 'stylesheet', href: styles }];
+}
 
 export let loader: LoaderFunction = async ({ context: { env } }) => {
   let counter = env.COUNTER.get(env.COUNTER.idFromName('root'));
@@ -41,14 +46,10 @@ function Document({ children }: PropsWithChildren<{}>) {
       <head>
         <Meta />
         <Links />
-        <link
-          rel="stylesheet"
-          href="https://unpkg.com/@exampledev/new.css@1.1.3/new.css"
-        />
       </head>
       <body>
         <header>
-          <h1>
+          <h1 className="text-3xl font-bold underline">
             <Link to="/">Remix Chat</Link>
           </h1>
           <p>
