@@ -6,9 +6,9 @@ type LoaderData = {
   loaderCalls: number;
 };
 
-export let loader: LoaderFunction = async ({ context: { env }, request }) => {
-  let counter = env.COUNTER.get(env.COUNTER.idFromName('index'));
-  let loaderCalls = await counter
+export const loader: LoaderFunction = async ({ context: { env } }) => {
+  const counter = env.COUNTER.get(env.COUNTER.idFromName('index'));
+  const loaderCalls = await counter
     .fetch('https://.../increment')
     .then((response) => response.text())
     .then((text) => Number.parseInt(text, 10));
@@ -17,7 +17,7 @@ export let loader: LoaderFunction = async ({ context: { env }, request }) => {
 };
 
 export default function Index() {
-  let { loaderCalls } = useLoaderData() as LoaderData;
+  const { loaderCalls } = useLoaderData() as LoaderData;
 
   return (
     <main>

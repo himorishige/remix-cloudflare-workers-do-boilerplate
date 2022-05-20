@@ -24,22 +24,22 @@ type LoaderData = {
   loaderCalls: number;
 };
 
-export function links() {
+export const links = () => {
   return [{ rel: 'stylesheet', href: styles }];
-}
+};
 
-export let loader: LoaderFunction = async ({ context: { env } }) => {
-  let counter = env.COUNTER.get(env.COUNTER.idFromName('root'));
-  let counterResponse = await counter.fetch('https://.../increment');
-  let loaderCalls = Number.parseInt(await counterResponse.text());
+export const loader: LoaderFunction = async ({ context: { env } }) => {
+  const counter = env.COUNTER.get(env.COUNTER.idFromName('root'));
+  const counterResponse = await counter.fetch('https://.../increment');
+  const loaderCalls = Number.parseInt(await counterResponse.text());
 
   return json<LoaderData>({ loaderCalls });
 };
 
 const Document = ({ children }: PropsWithChildren<{}>) => {
-  let matches = useMatches();
-  let root = matches.find((match) => match.id === 'root');
-  let data = root?.data as LoaderData | undefined;
+  const matches = useMatches();
+  const root = matches.find((match) => match.id === 'root');
+  const data = root?.data as LoaderData | undefined;
 
   return (
     <html lang="en">
@@ -76,7 +76,7 @@ export default function App() {
   );
 }
 
-export function CatchBoundary() {
+export const CatchBoundary = () => {
   let { status, statusText } = useCatch();
 
   return (
@@ -87,9 +87,9 @@ export function CatchBoundary() {
       </main>
     </Document>
   );
-}
+};
 
-export function ErrorBoundary({ error }: { error: Error }) {
+export const ErrorBoundary = ({ error }: { error: Error }) => {
   console.log(error);
 
   return (
@@ -99,4 +99,4 @@ export function ErrorBoundary({ error }: { error: Error }) {
       </main>
     </Document>
   );
-}
+};
