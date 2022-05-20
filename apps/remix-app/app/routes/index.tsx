@@ -1,32 +1,30 @@
+import type { LoaderFunction } from '@remix-run/cloudflare';
+import { json } from '@remix-run/cloudflare';
+import { useLoaderData } from '@remix-run/react';
+
+type LoaderData = {
+  loaderCalls: number;
+};
+
+export let loader: LoaderFunction = async ({ context: { env }, request }) => {
+  let counter = env.COUNTER.get(env.COUNTER.idFromName('index'));
+  let loaderCalls = await counter
+    .fetch('https://.../increment')
+    .then((response) => response.text())
+    .then((text) => Number.parseInt(text, 10));
+
+  return json<LoaderData>({ loaderCalls });
+};
+
 export default function Index() {
+  let { loaderCalls } = useLoaderData() as LoaderData;
+
   return (
-    <div style={{ fontFamily: 'system-ui, sans-serif', lineHeight: '1.4' }}>
-      <h1>Welcome to Remix</h1>
-      <ul>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/blog"
-            rel="noreferrer"
-          >
-            15m Quickstart Blog Tutorial
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/jokes"
-            rel="noreferrer"
-          >
-            Deep Dive Jokes App Tutorial
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-            Remix Docs
-          </a>
-        </li>
-      </ul>
-    </div>
+    <main>
+      <hr />
+      <footer>
+        <p>index loader invocations: {loaderCalls}</p>
+      </footer>
+    </main>
   );
 }

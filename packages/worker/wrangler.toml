@@ -11,3 +11,17 @@ bucket = "../../apps/remix-app/public"
 
 [env.dev]
 vars = {SESSION_SECRET = "should-be-secure-in-prod"}
+
+[env.dev.durable_objects]
+bindings = [
+  {name = "COUNTER", class_name = "CounterDurableObject"},
+]
+
+[durable_objects]
+bindings = [
+  {name = "COUNTER", class_name = "CounterDurableObject"},
+]
+
+[[migrations]]
+new_classes = ["CounterDurableObject"]
+tag = "v1"

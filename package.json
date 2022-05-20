@@ -11,7 +11,8 @@
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "type-check": "turbo run type-check"
+    "type-check": "turbo run type-check",
+    "deploy": "turbo run build && wrangler publish packages/worker/index.ts"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^3.10.0",

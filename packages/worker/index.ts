@@ -1,9 +1,10 @@
-/* eslint-disable import/no-anonymous-default-export */
 import { getAssetFromKV } from '@cloudflare/kv-asset-handler';
 import { createRequestHandler } from '@remix-run/cloudflare';
 import manifestJSON from '__STATIC_CONTENT_MANIFEST';
 
 import * as build from 'remix-app';
+
+export { default as CounterDurableObject } from 'counter-do';
 
 let assetManifest = JSON.parse(manifestJSON);
 let handleRemixRequest = createRequestHandler(build, process.env.NODE_ENV);
