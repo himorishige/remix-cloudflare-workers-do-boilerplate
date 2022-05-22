@@ -1,51 +1,46 @@
-# Turborepo starter with npm
+# Remix Starter Kit
 
-This is an official starter turborepo.
+This is Turborepo boilerplate for Remix on Cloudflare workers with DO + Session KV
 
 ## What's inside?
 
-This turborepo uses [npm](https://www.npmjs.com/) as a package manager. It includes the following packages/apps:
-
-### Apps and Packages
-
-- `docs`: a [Next.js](https://nextjs.org) app
-- `web`: another [Next.js](https://nextjs.org) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
-- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+- Remix
+- Turborepo
+- Cloudflare Workers
+- Durable Objects
+- Wokers KV
+- Tailwind CSS
+- ESLint
+- Prettier
 
 ## Setup
 
-This repository is used in the `npx create-turbo@latest` command, and selected when choosing which package manager you wish to use with your monorepo (npm).
-
-### Build
-
-To build all apps and packages, run the following command:
-
 ```
-cd my-turborepo
-npm run build
+$ npm install
 ```
 
-### Develop
-
-To develop all apps and packages, run the following command:
-
 ```
-cd my-turborepo
-npm run dev
+$ cd packages/worker
+$ wrangler secret put SESSION_SECRET
+$ wrangler kv:namespace create "SESSION_KV"
+$ wrangler kv:namespace create --preview "SESSION_KV"
 ```
 
+Append kv's id and preview_id to `packages/worker/wrangler.toml`.
+
+## Development
+
+```
+$ npm run dev
+```
+
+## Deploy
+
+```
+$ npm run deploy
+```
+
+## Turborepo
 ### Remote Caching
 
 Turborepo can use a technique known as [Remote Caching (Beta)](https://turborepo.org/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
@@ -64,14 +59,3 @@ Next, you can link your Turborepo to your Remote Cache by running the following 
 ```
 npx turbo link
 ```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Pipelines](https://turborepo.org/docs/core-concepts/pipelines)
-- [Caching](https://turborepo.org/docs/core-concepts/caching)
-- [Remote Caching (Beta)](https://turborepo.org/docs/core-concepts/remote-caching)
-- [Scoped Tasks](https://turborepo.org/docs/core-concepts/scopes)
-- [Configuration Options](https://turborepo.org/docs/reference/configuration)
-- [CLI Usage](https://turborepo.org/docs/reference/command-line-reference)
