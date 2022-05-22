@@ -25,6 +25,7 @@ $ wrangler secret put SESSION_SECRET
 $ wrangler kv:namespace create "SESSION_KV"
 $ wrangler kv:namespace create --preview "SESSION_KV"
 ```
+### CI/CD
 
 - Append account_id, kv's id and preview_id to `packages/worker/wrangler.toml`.
 - Append [Cloudflare API Token](https://dash.cloudflare.com/profile/api-tokens) to GitHub Actions Secrets(`CF_API_TOKEN`).
