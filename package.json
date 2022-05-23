@@ -1,9 +1,10 @@
 {
-  "name": "on-the-fridge",
+  "name": "remix-cloudflare-workers-do-boilerplate",
   "version": "0.0.0",
   "private": true,
   "workspaces": [
     "apps/*",
+    "services/*",
     "packages/*"
   ],
   "scripts": {
