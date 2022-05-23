@@ -6,8 +6,8 @@ import * as build from 'remix-app';
 
 export { default as CounterDurableObject } from 'counter-do';
 
-let assetManifest = JSON.parse(manifestJSON);
-let handleRemixRequest = createRequestHandler(build, process.env.NODE_ENV);
+const assetManifest = JSON.parse(manifestJSON);
+const handleRemixRequest = createRequestHandler(build, process.env.NODE_ENV);
 
 export default {
   async fetch(
@@ -45,7 +45,7 @@ export default {
     }
 
     try {
-      let loadContext: LoadContext = { env };
+      const loadContext: LoadContext = { env };
       return await handleRemixRequest(request, loadContext);
     } catch (error) {
       console.log(error);
