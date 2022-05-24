@@ -19,7 +19,7 @@ jobs:
         uses: bahmutov/npm-install@v1
 
       - name: 📦 Build
-        run: npm run build
+        run: yarn build
 
       - name: 🚀 Publish
         uses: cloudflare/wrangler-action@2.0.0
