@@ -4,6 +4,10 @@
       "dependsOn": ["^build"],
       "outputs": ["build/**", "public/build/**", ".cache/**"]
     },
+    "test": {
+      "outputs": ["coverage/**"],
+      "dependsOn": []
+    },
     "lint": {
       "outputs": []
     },
@@ -11,6 +15,7 @@
       "cache": false
     },
     "type-check": {
+      "cache": false,
       "outputs": ["tsconfig.tsbuildinfo"]
     }
   }
