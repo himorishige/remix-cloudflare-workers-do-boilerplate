@@ -12,6 +12,7 @@ This is Turborepo boilerplate for Remix on Cloudflare workers with DO + Session 
 - Tailwind CSS
 - ESLint
 - Prettier
+- Playwright
 
 ## Setup
 
@@ -36,7 +37,6 @@ $ wrangler kv:namespace create --preview "SESSION_KV"
 ## Development
 
 ```
-$ npm run dev
 $ yarn dev
 ```
 
@@ -45,21 +45,18 @@ $ yarn dev
 #### repo
 
 ```
-$ npm install -w=remix-app tiny-invariant
 $ yarn workspace remix-app add tiny-invariant
 ```
 
 #### root
 
 ```
-$ npm install tiny-invariant
 $ yarn add -W tiny-invariant
 ```
 
 ## Deploy
 
 ```
-$ npm run deploy
 $ yarn deploy
 ```
 

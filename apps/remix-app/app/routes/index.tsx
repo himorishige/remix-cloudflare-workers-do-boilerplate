@@ -42,6 +42,7 @@ export default function Index() {
           <button
             type="submit"
             className="flex justify-center items-center py-2 px-4 font-medium text-white bg-blue-500 hover:bg-blue-600 disabled:bg-slate-400 rounded border-0 focus:outline-none"
+            data-testid="login-button"
           >
             Login
           </button>

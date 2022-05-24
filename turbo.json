@@ -4,9 +4,9 @@
       "dependsOn": ["^build"],
       "outputs": ["build/**", "public/build/**", ".cache/**"]
     },
-    "test": {
+    "e2e": {
       "outputs": ["coverage/**"],
-      "dependsOn": []
+      "dependsOn": ["build"]
     },
     "lint": {
       "outputs": []

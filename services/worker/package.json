@@ -5,16 +5,19 @@
   "scripts": {
     "dev": "wrangler dev --env dev --local",
     "lint": "eslint .",
-    "type-check": "tsc -b"
+    "type-check": "tsc -b",
+    "e2e": "playwright test --project=chromium"
   },
   "dependencies": {
     "@cloudflare/kv-asset-handler": "^0.2.0",
     "@remix-run/cloudflare": "^1.5.1",
-    "remix-app": "*",
-    "counter-do": "*"
+    "counter-do": "*",
+    "remix-app": "*"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^3.10.0",
+    "@playwright-testing-library/test": "^4.2.1",
+    "@playwright/test": "^1.22.2",
     "cloudflare-env": "*",
     "eslint": "^8.15.0",
     "eslint-config-custom": "*",
