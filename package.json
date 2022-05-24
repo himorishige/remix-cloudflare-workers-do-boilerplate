@@ -13,6 +13,7 @@
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "type-check": "turbo run type-check",
+    "e2e": "turbo run e2e",
     "changeset": "changeset",
     "version-packages": "changeset version",
     "deploy": "turbo run build && cd packages/worker && wrangler publish index.ts"

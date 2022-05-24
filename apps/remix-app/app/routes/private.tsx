@@ -36,11 +36,12 @@ export default function Private() {
 
   return (
     <main>
-      <p>username: {username}</p>
+      <p>username: <span data-testid="username">{username}</span></p>
       <Form method="post">
         <button
           type="submit"
           className="flex justify-center items-center py-2 px-4 font-medium text-white bg-blue-500 hover:bg-blue-600 disabled:bg-slate-400 rounded border-0 focus:outline-none"
+          data-testid="logout-button"
         >
           Logout
         </button>
