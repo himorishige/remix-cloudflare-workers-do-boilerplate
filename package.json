@@ -13,9 +13,12 @@
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "type-check": "turbo run type-check",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
     "deploy": "turbo run build && cd packages/worker && wrangler publish index.ts"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.22.0",
     "@cloudflare/workers-types": "^3.10.0",
     "prettier": "latest",
     "turbo": "latest",
@@ -25,7 +28,5 @@
   "engines": {
     "node": ">=16.7.0"
   },
-  "dependencies": {
-    "tiny-invariant": "^1.2.0"
-  }
+  "dependencies": {}
 }
