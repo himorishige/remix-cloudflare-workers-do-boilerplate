@@ -17,6 +17,7 @@ This is Turborepo boilerplate for Remix on Cloudflare workers with DO + Session 
 
 ```
 $ npm install
+$ yarn install
 ```
 
 ```
@@ -36,12 +37,30 @@ $ wrangler kv:namespace create --preview "SESSION_KV"
 
 ```
 $ npm run dev
+$ yarn dev
+```
+
+### package install example
+
+#### repo
+
+```
+$ npm install -w=remix-app tiny-invariant
+$ yarn workspace remix-app add tiny-invariant
+```
+
+#### root
+
+```
+$ npm install tiny-invariant
+$ yarn add -W tiny-invariant
 ```
 
 ## Deploy
 
 ```
 $ npm run deploy
+$ yarn deploy
 ```
 
 ## Turborepo
