@@ -10,19 +10,19 @@
   },
   "dependencies": {
     "@cloudflare/kv-asset-handler": "^0.2.0",
-    "@remix-run/cloudflare": "^1.5.1",
+    "@remix-run/cloudflare": "^1.7.6",
     "counter-do": "*",
     "remix-app": "*"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^3.10.0",
-    "@playwright-testing-library/test": "^4.2.1",
-    "@playwright/test": "^1.22.2",
+    "@cloudflare/workers-types": "^4.20221111.1",
+    "@playwright-testing-library/test": "^4.5.0",
+    "@playwright/test": "^1.28.0",
     "cloudflare-env": "*",
-    "eslint": "^8.15.0",
+    "eslint": "^8.28.0",
     "eslint-config-custom": "*",
     "tsconfig": "*",
-    "typescript": "^4.6.4",
-    "wrangler": "^2.0.5"
+    "typescript": "^4.9.3",
+    "wrangler": "^2.4.4"
   }
 }

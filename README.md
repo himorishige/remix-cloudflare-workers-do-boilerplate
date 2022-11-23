@@ -37,6 +37,7 @@ $ wrangler kv:namespace create --preview "SESSION_KV"
 ## Development
 
 ```
+$ yarn build // only first time
 $ yarn dev
 ```
 
