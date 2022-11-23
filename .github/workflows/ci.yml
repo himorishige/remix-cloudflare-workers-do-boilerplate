@@ -15,7 +15,7 @@ jobs:
       - name: ⎔ Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: 16.7.0
+          node-version: 16
 
       - name: 📥 Download deps
         uses: bahmutov/npm-install@v1
@@ -36,7 +36,7 @@ jobs:
       - name: ⎔ Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: 16.7.0
+          node-version: 16
 
       - name: 📥 Install turbo
         run: yarn -g turbo
